@@ -1,0 +1,1 @@
+### comando: node html-escaper.js <caminho de entrada> <caminho de saida>
