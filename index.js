@@ -18,4 +18,14 @@ function escapeHtmlSpecialCharacters(text){
     })
 }
 
-console.log(escapeHtmlSpecialCharacters("testando a função: <span> eae </span>"))
+function escapeHtmlFile(inputFilePath, outputFilePath){
+    try {
+        const fileContent = fs.readFileSync(inputFilePath, "utf-8")
+        const escapedContent = escapeHtmlSpecialCharacters(fileContent)
+        fs.writeFileSync(outputFilePath, escapedContent, "utf-8")
+        console.log("Arquivo escapado com sucesso")
+    } catch (error) {
+        console.log("Erro:", error.message)
+        process.exit(1)
+    }
+}
