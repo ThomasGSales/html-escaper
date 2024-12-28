@@ -11,7 +11,11 @@ function escapeHtmlSpecialCharacters(text){
                 return "&gt;"
             case "&":
                 return "&amp;"
+            default:
+                return match
         }
         
     })
 }
+
+console.log(escapeHtmlSpecialCharacters("testando a função: <span> eae </span>"))
